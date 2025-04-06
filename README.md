@@ -1,4 +1,4 @@
-# Phase-0-Week-3
+}
 
 # JavaScript Week 3: Arrays
 
@@ -23,6 +23,16 @@ Array dapat menyimpan berbagai tipe data seperti string, number, boolean, bahkan
 
 ## 2. Contoh Penggunaan
 
+### Properti Panjang Array
+`.length`
+
+Membaca jumlah elemen yang ada dalam suatu array:
+
+```javascript
+let arr = [10, 20, 30];
+console.log(arr.length); // 3
+```
+
 ### Akses Elemen dalam Array
 ```javascript
 let colors = ["Red", "Green", "Blue"];
@@ -33,9 +43,9 @@ console.log(colors[2]); // Output: Blue
 
 ### Menambahkan dan Menghapus Elemen
 - **`push()`**: Menambahkan elemen ke akhir array
-- **`pop()`**: Menghapus elemen terakhir
+- **`pop()`**: Mengambil elemen terakhir
 - **`unshift()`**: Menambahkan elemen ke awal array
-- **`shift()`**: Menghapus elemen pertama
+- **`shift()`**: Mengambil elemen pertama
 
 ```javascript
 let numbers = [1, 2, 3];
@@ -46,6 +56,14 @@ numbers.shift();  // [1, 2, 3]
 ```
 
 ### Looping dalam Array
+Menggunakan **for**:
+```javascript
+let animals = ["Cat", "Dog", "Elephant"];
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i]);
+}
+```
+
 Menggunakan **forEach()**:
 ```javascript
 let animals = ["Cat", "Dog", "Elephant"];
@@ -61,7 +79,31 @@ for (let animal of animals) {
 }
 ```
 
-### Metode Lainnya
+### Fungsi Pencarian Indeks dan Elemen
+- **`indexOf()`** – Mengetahui indeks keberapa dari suatu elemen
+- **`includes()`** – Memastikan keberadaan suatu elemen
+```javascript
+let items = ["pen", "book", "notebook"];
+
+console.log(items.indexOf("book")); // 1
+console.log(items.includes("pen")); // true
+```
+
+### Fungsi Menyisip dan Mengiris
+- **`splice()`** – Menghapus dan menyisipkan elemen-elemen pada suatu indeks
+- **`slice()`** – Menyalin sebagian elemen-elemen dari suatu array
+```javascript
+let arr = ["a", "b", "c", "d"];
+
+// splice(start, deleteCount, item1, item2, ...)
+arr.splice(1, 2, "x", "y"); // ["a", "x", "y", "d"]
+
+// slice(start, end)
+let newArr = arr.slice(1, 3); // ["x", "y"]
+
+```
+
+### Fungsi Lainnya
 - **`map()`** – Membuat array baru dengan hasil operasi pada setiap elemen
 - **`filter()`** – Menyaring elemen berdasarkan kondisi tertentu
 - **`reduce()`** – Mengakumulasikan nilai array menjadi satu nilai
@@ -87,7 +129,17 @@ let students = ["Alice", "Bob", "Charlie"];
 // Lakukan manipulasi array di sini
 ```
 
-### Tugas 2: Pengolahan Data dengan `map()` dan `filter()`
+### Tugas 2: Mencari Bilangan Terbesar
+Buatlah fungsi yang dapat mencari bilangan terbesar dari suatu array:
+```javascript
+function getMax(arr) {
+  return Math.max(...arr);
+}
+
+console.log(getMax([4, 10, 2, 99])); // 99
+```
+
+### Tugas 3: Pengolahan Data dengan `map()` dan `filter()`
 Buatlah array angka `[10, 15, 20, 25, 30]`, lalu:
 1. Buat array baru yang berisi angka dikalikan 2 menggunakan `map()`.
 2. Buat array baru yang hanya berisi angka lebih dari 20 menggunakan `filter()`.
